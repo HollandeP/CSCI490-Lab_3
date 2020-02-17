@@ -23,13 +23,15 @@ public class MainActivity extends AppCompatActivity {
         String toastMsg = "Toast Initiated";
         final Toast toast = Toast.makeText(context, toastMsg, Toast.LENGTH_SHORT);
 
-
+        //instantiate classSched ListView and classes array
         classSched = findViewById(R.id.class_schedule);
         String[] classes = {"CSCI 310", "CSCI 370","CSCI 230","CSCI 345","CSCI 380"};
 
+        //create adapter and attach it to ListView
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classes);
         classSched.setAdapter(adapter);
 
+        //set onClickListeners
         classSched.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
